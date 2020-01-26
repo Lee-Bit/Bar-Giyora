@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Bar Giyora</string>
+
+    <string name="login_title">כניסת משתמשים</string>
+    <string name="login_exist">משתמש קיים</string>
+    <string name="login_new">משתמש חדש</string>
+    <string name="login_sign">לחץ להרשמה</string>
+    <string name="login_google">הרשמה עם google</string>
+    <string name="login_facebook">הרשמה עם facebook</string>
+
+    <string name="request">פניות</string>
+    <string name="message">הודעות</string>
+    <string name="schedule">יומן אירועים</string>
+    <string name="sellAndDeliveryBoard">לוח מסירה ומכירה</string>
+    <string name="findRide">מצא טרמפ</string>
+    <string name="residentService">שירות לתושב</string>
+    <string name="localBusiness">עסקים מקומיים</string>
+    <string name="gallery">גלרייה</string>
+    <string name="nearUs">מה בסביבה</string>
+
+    <string name="firstName">שם פרטי</string>
+    <string name="lastName">שם משפחה</string>
+    <string name="phone">מספר טלפון</string>
+    <string name="password">סיסמא</string>
+    <string name="validPassword">אימות סיסמא</string>
+    <string name="apartment">מספר בית</string>
+    <string name="email">דואר אלקטרוני</string>
+
+    <string name="newRequest">הקמת פניה חדשה</string>
+    <string name="requestTitle">נושא הפניה</string>
+    <string name="requestContent">תוכן הפניה</string>
+    <string name="requestMessagw">הכנס כאן את תוכן הפניה שלך</string>
+    <string-array name="typeOfRequst">
+        <item>בחר נושא</item>
+        <item>בטחון</item>
+        <item>תחזוקה</item>
+        <item>תרבות והעשרה</item>
+        <item>אחר</item>
+    </string-array>
+
+    <string name="title_activity_request">RequestActivity</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
