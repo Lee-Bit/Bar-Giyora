@@ -84,4 +84,36 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RequestActivity.class);
         startActivity(intent);
     }
+//    private void startMessageActivity() {
+//        Intent intent = new Intent(this, RequestActivity.class); need to change the activity
+//        startActivity(intent);
+//    }
+//    private void startScheduleActivity() {
+//        Intent intent = new Intent(this, RequestActivity.class); need to change the activity
+//        startActivity(intent);
+//    }
+//    private void startSellAndDeliveryBoardActivity() {
+//        Intent intent = new Intent(this, RequestActivity.class); need to change the activity
+//        startActivity(intent);
+//    }
+//    private void startFindRideActivity() {
+//        Intent intent = new Intent(this, RequestActivity.class); need to change the activity
+//        startActivity(intent);
+//    }
+//    private void startResidentServiceActivity() {
+//        Intent intent = new Intent(this, RequestActivity.class); need to change the activity
+//        startActivity(intent);
+//    }
+//    private void startLocalBusinessActivity() {
+//        Intent intent = new Intent(this, RequestActivity.class); need to change the activity
+//        startActivity(intent);
+//    }
+//    private void startGalleryActivity() {
+//        Intent intent = new Intent(this, RequestActivity.class); need to change the activity
+//        startActivity(intent);
+//    }
+//    private void startNearUsActivity() {
+//        Intent intent = new Intent(this, RequestActivity.class); need to change the activity
+//        startActivity(intent);
+//    }
 }
