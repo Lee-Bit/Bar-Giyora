@@ -29,8 +29,8 @@
     <string name="newRequest">הקמת פניה חדשה</string>
     <string name="requestTitle">נושא הפניה</string>
     <string name="requestContent">תוכן הפניה</string>
-    <string name="requestMessagw">הכנס כאן את תוכן הפניה שלך</string>
-    <string-array name="typeOfRequst">
+    <string name="requestMessage">הכנס כאן את תוכן הפניה שלך</string>
+    <string-array name="typeOfRequest">
         <item>בחר נושא</item>
         <item>בטחון</item>
         <item>תחזוקה</item>
@@ -38,6 +38,19 @@
         <item>אחר</item>
     </string-array>
 
+    <string name="postService">דואר</string>
+    <string name="postDetails">ימי ראשון, שלישי וחמישי בין השעות 16:30-17:30</string>
+    <string name="securingService">אבטחה</string>
+    <string name="securingDetails">כל לילה בין השעות 23:00-5:00</string>
+    <string name="branchCollectionService">איסוף גזם</string>
+    <string name="branchCollectionDetails">אחת לחודש בתאריך שיפורסם מראש, יש להוציא את הגזם למדרכה יום קודם האיסוף</string>
+    <string name="lumpyWasteCollectionService">איסוף פסולת גושית</string>
+    <string name="lumpyWasteCollectionDetails">אחת לחודש בתאריך שיפורסם מראש, יש להוציא את הפסולת למדרכה יום קודם האיסוף</string>
+    <string name="synagogueService">בית כנסת</string>
+    <string name="synagogueDetails">שחרית: 5:30, מנחה וערבית: 17:15</string>
+    <string name="mikvehService">מקווה טהרה </string>
+    <string name="mikvehDetails">בשיפוצים עד להודעה חדשה</string>
+    
     <string name="title_activity_request">RequestActivity</string>
 
     <string name="action_settings">Settings</string>

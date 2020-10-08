@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     startRegistrationActivity();
                     break;
                 case R.id.btnResidentServiceID:
-
+                    startResidentServiceActivity();
                     break;
                 case R.id.btnLocalBusinessID:
 
@@ -100,10 +100,10 @@ public class MainActivity extends AppCompatActivity {
 //        Intent intent = new Intent(this, RequestActivity.class); need to change the activity
 //        startActivity(intent);
 //    }
-//    private void startResidentServiceActivity() {
-//        Intent intent = new Intent(this, RequestActivity.class); need to change the activity
-//        startActivity(intent);
-//    }
+    private void startResidentServiceActivity() {
+        Intent intent = new Intent(this, ResidentServiceActivity.class);
+        startActivity(intent);
+    }
 //    private void startLocalBusinessActivity() {
 //        Intent intent = new Intent(this, RequestActivity.class); need to change the activity
 //        startActivity(intent);
