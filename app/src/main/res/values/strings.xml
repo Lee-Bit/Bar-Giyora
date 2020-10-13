@@ -50,7 +50,11 @@
     <string name="synagogueDetails">שחרית: 5:30, מנחה וערבית: 17:15</string>
     <string name="mikvehService">מקווה טהרה </string>
     <string name="mikvehDetails">בשיפוצים עד להודעה חדשה</string>
-    
+
+    <string name="restaurant">מסעדות</string>
+    <string name="pools">מעיינות ובריכות</string>
+    <string name="trips">מסלולי טבע</string>
+    <string name="other">שונות</string>
     <string name="title_activity_request">RequestActivity</string>
 
     <string name="action_settings">Settings</string>
