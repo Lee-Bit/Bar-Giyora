@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         btnMessage.setOnClickListener(new Listener());
         Button btnSchedule = findViewById(R.id.btnScheduleID);
         btnSchedule.setOnClickListener(new Listener());
-        Button btnSellAndDeliveryBord = findViewById(R.id.btnSellAndDeliveryBoardID);
+        Button btnSellAndDeliveryBord = findViewById(R.id.btnSaleAndDeliveryBoardID);
         btnSellAndDeliveryBord.setOnClickListener(new Listener());
         Button btnFindRide = findViewById(R.id.btnFindRideID);
         btnFindRide.setOnClickListener(new Listener());
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         btnLocalBusiness.setOnClickListener(new Listener());
         Button btnGallery = findViewById(R.id.btnGalleryID);
         btnGallery.setOnClickListener(new Listener());
-        Button btnNearUs = findViewById(R.id.btnNNearUsID);
+        Button btnNearUs = findViewById(R.id.btnNearUsID);
         btnNearUs.setOnClickListener(new Listener());
 
     }
@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btnScheduleID:
 
                     break;
-                case R.id.btnSellAndDeliveryBoardID:
-
+                case R.id.btnSaleAndDeliveryBoardID:
+                    startDeliveryAndSaleBoardActivity();
                     break;
                 case R.id.btnFindRideID:
                     startRegistrationActivity();
@@ -59,13 +59,13 @@ public class MainActivity extends AppCompatActivity {
                     startResidentServiceActivity();
                     break;
                 case R.id.btnLocalBusinessID:
-
+                    startLocalBusinessActivity();
                     break;
                 case R.id.btnGalleryID:
 
                     break;
-                case R.id.btnNNearUsID:
-
+                case R.id.btnNearUsID:
+                    startAroundUsActivity();
                     break;
             }
         }
@@ -84,18 +84,18 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RequestActivity.class);
         startActivity(intent);
     }
-//    private void startMessageActivity() {
-//        Intent intent = new Intent(this, RequestActivity.class); need to change the activity
-//        startActivity(intent);
-//    }
+    private void startMessageActivity() {
+        Intent intent = new Intent(this, MessagesActivity.class);
+        startActivity(intent);
+    }
 //    private void startScheduleActivity() {
 //        Intent intent = new Intent(this, RequestActivity.class); need to change the activity
 //        startActivity(intent);
 //    }
-//    private void startSellAndDeliveryBoardActivity() {
-//        Intent intent = new Intent(this, RequestActivity.class); need to change the activity
-//        startActivity(intent);
-//    }
+    private void startDeliveryAndSaleBoardActivity() {
+        Intent intent = new Intent(this, DeliveryAndSaleBoardActivity.class);
+        startActivity(intent);
+    }
 //    private void startFindRideActivity() {
 //        Intent intent = new Intent(this, RequestActivity.class); need to change the activity
 //        startActivity(intent);
@@ -104,16 +104,16 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ResidentServiceActivity.class);
         startActivity(intent);
     }
-//    private void startLocalBusinessActivity() {
-//        Intent intent = new Intent(this, RequestActivity.class); need to change the activity
-//        startActivity(intent);
-//    }
+    private void startLocalBusinessActivity() {
+        Intent intent = new Intent(this,BusinessCategoryActivity.class);
+        startActivity(intent);
+    }
 //    private void startGalleryActivity() {
 //        Intent intent = new Intent(this, RequestActivity.class); need to change the activity
 //        startActivity(intent);
 //    }
-//    private void startNearUsActivity() {
-//        Intent intent = new Intent(this, RequestActivity.class); need to change the activity
-//        startActivity(intent);
-//    }
+    private void startAroundUsActivity() {
+        Intent intent = new Intent(this, AroundUsCategoryActivity.class);
+        startActivity(intent);
+    }
 }
