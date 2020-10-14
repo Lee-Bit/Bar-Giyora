@@ -8,9 +8,10 @@
     tools:context=".DeliveryAndSaleBoardActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcDeliveryAndSaleBoard"
+        android:id="@+id/rcDeliveryAndSaleBoardID"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    android:layout_below="@+id/tvDeliveryAndSaleBoardTitle" />
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/row_delivery_and_sale_board"/>
 
 </LinearLayout>
