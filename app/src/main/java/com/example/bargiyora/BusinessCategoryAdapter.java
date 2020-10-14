@@ -21,7 +21,6 @@ public class BusinessCategoryAdapter extends RecyclerView.Adapter<BusinessCatego
         this.businessCategoryList = businessCategoryList;
     }
 
-
     @NonNull
     @Override
     public BusinessCategoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

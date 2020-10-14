@@ -26,19 +26,20 @@ public class BusinessesListAdapter extends RecyclerView.Adapter<BusinessesListAd
     @Override
     public void onBindViewHolder(@NonNull BusinessesListViewHolder holder, int position) {
         BusinessesList item = businessesListList.get();
+
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return businessesListList != null ? businessesListList.size() :0;
     }
 
     class BusinessesListViewHolder extends RecyclerView.ViewHolder{
-         private final TextView tvMessagesList;
+         private final TextView tvBusinessListItem;
 
         public BusinessesListViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.tvMessagesList = itemView.findViewById(R.id.tvBusinessesListID);
+            tvBusinessListItem = itemView.findViewById(R.id.tvBusinessListItemID);
         }
     }
 }
