@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+import com.example.bargiyora.data.model.Messages;
 
 public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.MessagesViewHolder> {
 
@@ -28,7 +29,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
     @Override
     public void onBindViewHolder(@NonNull MessagesAdapter.MessagesViewHolder holder, int position) {
         Messages item = messagesList.get(position);
-        holder.tvMessages.setText("ajshds");
+//        holder.tvMessages.setText("ajshds");
     }
 
     @Override
