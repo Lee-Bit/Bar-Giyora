@@ -8,6 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.bargiyora.data.model.DeliveryAndSale;
+
 import java.util.List;
 
 public class DeliveryAndSaleAdapter extends RecyclerView.Adapter<DeliveryAndSaleAdapter.DeliveryAndSaleViewHolder> {
