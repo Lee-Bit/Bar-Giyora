@@ -8,12 +8,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.bargiyora.data.model.Business;
+
+import java.util.List;
+
 public class BusinessesListAdapter extends RecyclerView.Adapter<BusinessesListAdapter.BusinessesListViewHolder> {
 
-    private List<BusinessesList> businessesListList;
+    private List<Business> businessesList;
 
-    public BusinessesListAdapter(List<BusinessesList> businessesListList) {
-        this.businessesListList = businessesListList;
+    public BusinessesListAdapter(List<Business> businessesList) {
+        this.businessesList = businessesList;
     }
 
     @NonNull
@@ -25,13 +29,12 @@ public class BusinessesListAdapter extends RecyclerView.Adapter<BusinessesListAd
 
     @Override
     public void onBindViewHolder(@NonNull BusinessesListViewHolder holder, int position) {
-        BusinessesList item = businessesListList.get();
-
+            Business item = businessesList.get(position);
     }
 
     @Override
     public int getItemCount() {
-        return businessesListList != null ? businessesListList.size() :0;
+        return businessesList != null ? businessesList.size() :0;
     }
 
     class BusinessesListViewHolder extends RecyclerView.ViewHolder{
