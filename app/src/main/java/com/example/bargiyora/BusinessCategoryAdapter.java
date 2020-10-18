@@ -36,7 +36,7 @@ public class BusinessCategoryAdapter extends RecyclerView.Adapter<BusinessCatego
 
         /*switch (item.getId()) {
             case "001":
-                holder.ivIcon.setImageResource(R.drawable.ic_food_category);
+                holder.ivIcon.setImageResource(R.drawable.);
                 break;
 
             case "002":

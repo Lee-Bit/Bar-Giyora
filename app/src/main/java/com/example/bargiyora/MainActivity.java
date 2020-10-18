@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
         btnMessage.setOnClickListener(new Listener());
         Button btnSchedule = findViewById(R.id.btnScheduleID);
         btnSchedule.setOnClickListener(new Listener());
-        Button btnSellAndDeliveryBord = findViewById(R.id.btnSaleAndDeliveryBoardID);
-        btnSellAndDeliveryBord.setOnClickListener(new Listener());
+        Button btnSaleAndDeliveryBord = findViewById(R.id.btnSaleAndDeliveryBoardID);
+        btnSaleAndDeliveryBord.setOnClickListener(new Listener());
         Button btnFindRide = findViewById(R.id.btnFindRideID);
         btnFindRide.setOnClickListener(new Listener());
         Button btnResidenService = findViewById(R.id.btnResidentServiceID);
