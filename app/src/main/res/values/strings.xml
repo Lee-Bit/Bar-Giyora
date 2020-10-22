@@ -7,11 +7,12 @@
     <string name="login_sign">לחץ להרשמה</string>
     <string name="login_google">הרשמה עם google</string>
     <string name="login_facebook">הרשמה עם facebook</string>
+    <string name="login_submit_btn">כניסה</string>
 
     <string name="request">פניות</string>
     <string name="message">הודעות</string>
-    <string name="schedule">יומן אירועים</string>
-    <string name="sellAndDeliveryBoard">לוח מסירה ומכירה</string>
+    <string name="settings">הגדרות</string>
+    <string name="deliveryAndSale"> מסירה ומכירה</string>
     <string name="findRide">מצא טרמפ</string>
     <string name="residentService">שירות לתושב</string>
     <string name="localBusiness">עסקים מקומיים</string>
@@ -56,6 +57,9 @@
     <string name="trips">מסלולי טבע</string>
     <string name="other">שונות</string>
     <string name="title_activity_request">RequestActivity</string>
+
+    <string name="forSale">למכירה</string>
+    <string name="forDelivery">למסירה</string>
 
     <string name="action_settings">Settings</string>
 </resources>
