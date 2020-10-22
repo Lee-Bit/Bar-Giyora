@@ -30,8 +30,15 @@ public class DeliveryAndSaleAdapter extends RecyclerView.Adapter<DeliveryAndSale
     @Override
     public void onBindViewHolder(@NonNull DeliveryAndSaleViewHolder holder, int position) {
         DeliveryAndSale item = deliveryAndSaleList.get(position);
-//        holder.tvItemType.setText(item.getType());
-//        holder.tvSaleItem.setText(item.getItem());
+        if (item.getType())
+            holder.tvItemType.setText(R.string.forSale);
+        else holder.tvItemType.setText(R.string.forDelivery);
+        holder.tvItemDate.setText(item.getDate());
+        holder.tvItemName.setText(item.getName());
+        holder.tvItemPrice.setText(item.getPrice());
+//        holder.tvPublisherName.setText();
+//        holder.tvPublisherPhone.setText();
+        holder.tvItemContent.setText(item.getContent());
     }
 
     @Override
@@ -41,12 +48,17 @@ public class DeliveryAndSaleAdapter extends RecyclerView.Adapter<DeliveryAndSale
 
     class DeliveryAndSaleViewHolder extends RecyclerView.ViewHolder{
 
-        private final TextView tvItemType, tvSaleItem;
+        private final TextView tvItemType, tvItemDate, tvItemName, tvItemPrice, tvPublisherName, tvPublisherPhone, tvItemContent;
 //
         public DeliveryAndSaleViewHolder(@NonNull View itemView) {
             super(itemView);
             tvItemType = itemView.findViewById(R.id.tvItemTypeID);
-            tvSaleItem = itemView.findViewById(R.id.tvSaleItemID);
+            tvItemDate = itemView.findViewById(R.id.tvItemDateID);
+            tvItemName = itemView.findViewById(R.id.tvItemNameID);
+            tvItemPrice = itemView.findViewById(R.id.tvItemPriceID);
+            tvPublisherName = itemView.findViewById(R.id.tvItemPublisherNameID);
+            tvPublisherPhone = itemView.findViewById(R.id.tvItemPublisherPhoneID);
+            tvItemContent = itemView.findViewById(R.id.tvItemContentID);
         }
     }
 }

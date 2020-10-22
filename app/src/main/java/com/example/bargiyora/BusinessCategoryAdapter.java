@@ -33,16 +33,22 @@ public class BusinessCategoryAdapter extends RecyclerView.Adapter<BusinessCatego
         BusinessCategory item = businessCategoryList.get(position);
 
         holder.tvTitle.setText(item.getName());
-
-        /*switch (item.getId()) {
-            case "001":
-                holder.ivIcon.setImageResource(R.drawable.);
+        switch (item.getId()) {
+            case "1":
+                holder.ivIcon.setImageResource(R.drawable.ic_food);
                 break;
-
-            case "002":
-                holder.ivIcon.setImageResource(asdasd);
+            case "2":
+                holder.ivIcon.setImageResource(R.drawable.ic_construction);
                 break;
-        }*/
+            case "3":
+                holder.ivIcon.setImageResource(R.drawable.ic_electric);
+                break;
+            case "4":
+                holder.ivIcon.setImageResource(R.drawable.ic_beauty);
+                break;
+            case "5":
+                holder.ivIcon.setImageResource(R.drawable.ic_wood);
+        }
     }
 
     @Override
@@ -58,8 +64,8 @@ public class BusinessCategoryAdapter extends RecyclerView.Adapter<BusinessCatego
 
         public BusinessCategoryViewHolder(@NonNull View itemView) {
             super(itemView);
-            ivIcon = itemView.findViewById(R.id.ivIcon);
-            tvTitle = itemView.findViewById(R.id.tvTitle);
+            ivIcon = itemView.findViewById(R.id.ivBCIconID);
+            tvTitle = itemView.findViewById(R.id.tvBCTitleID);
         }
     }
 }

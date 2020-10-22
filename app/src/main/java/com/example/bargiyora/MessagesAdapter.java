@@ -29,7 +29,11 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
     @Override
     public void onBindViewHolder(@NonNull MessagesAdapter.MessagesViewHolder holder, int position) {
         Messages item = messagesList.get(position);
-//        holder.tvMessages.setText("ajshds");
+        holder.tvMessageTitle.setText(item.getTitle());
+//        holder.tvMessagePublisherName.setText();
+        holder.tvMessageDate.setText(item.getDate());
+        holder.tvMessageTime.setText(item.getTime());
+        holder.tvMessageContent.setText(item.getContent());
     }
 
     @Override
@@ -39,11 +43,15 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
 
     class MessagesViewHolder extends RecyclerView.ViewHolder{
 
-        private final TextView tvMessages;
+        private final TextView tvMessageTitle, tvMessagePublisherName, tvMessageDate, tvMessageTime, tvMessageContent;
 
         public MessagesViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvMessages= itemView.findViewById(R.id.tvMessagesID);
+            tvMessageTitle=itemView.findViewById(R.id.tvMessageTitleID);
+            tvMessagePublisherName=itemView.findViewById(R.id.tvMessagePublisherID);
+            tvMessageDate=itemView.findViewById(R.id.tvMessageDateID);
+            tvMessageTime=itemView.findViewById(R.id.tvMessageTimeID);
+            tvMessageContent=itemView.findViewById(R.id.tvMessageContentID);
         }
     }
 }

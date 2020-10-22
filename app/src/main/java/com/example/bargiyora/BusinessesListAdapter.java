@@ -30,6 +30,10 @@ public class BusinessesListAdapter extends RecyclerView.Adapter<BusinessesListAd
     @Override
     public void onBindViewHolder(@NonNull BusinessesListViewHolder holder, int position) {
             Business item = businessesList.get(position);
+            holder.tvBusinessName.setText(item.getName());
+            holder.tvBusinessContent.setText(item.getContent());
+            holder.tvBusinessPhone.setText(item.getPhone());
+            holder.tvBusinessAddress.setText(item.getAddress());
     }
 
     @Override
@@ -38,11 +42,14 @@ public class BusinessesListAdapter extends RecyclerView.Adapter<BusinessesListAd
     }
 
     class BusinessesListViewHolder extends RecyclerView.ViewHolder{
-         private final TextView tvBusinessListItem;
+         private final TextView tvBusinessName, tvBusinessContent, tvBusinessPhone, tvBusinessAddress;
 
         public BusinessesListViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvBusinessListItem = itemView.findViewById(R.id.tvBusinessListItemID);
+            tvBusinessName=itemView.findViewById(R.id.tvBusinessNameID);
+            tvBusinessContent=itemView.findViewById(R.id.tvBusinessContentID);
+            tvBusinessPhone=itemView.findViewById(R.id.tvBusinessPhoneID);
+            tvBusinessAddress=itemView.findViewById(R.id.tvBusinessAddressID);
         }
     }
 }

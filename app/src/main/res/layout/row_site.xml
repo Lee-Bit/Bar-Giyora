@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:padding="20dp"
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/tvBusinessNameID"
+        android:id="@+id/tvSiteNameID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
-        android:id="@+id/tvBusinessContentID"
+        android:id="@+id/tvSiteContentID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
-        android:id="@+id/tvBusinessPhoneID"
+        android:id="@+id/tvSitePhoneID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
-        android:id="@+id/tvBusinessAddressID"
+        android:id="@+id/tvSiteAddressID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
 </LinearLayout>
