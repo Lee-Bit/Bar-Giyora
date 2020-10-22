@@ -1,4 +1,4 @@
-package com.example.bargiyora.ui;
+package com.example.bargiyora;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,8 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bargiyora.R;
-import com.example.bargiyora.data.model.Site;
+import com.example.bargiyora.model.Site;
 
 import java.util.List;
 

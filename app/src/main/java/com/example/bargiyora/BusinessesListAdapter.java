@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bargiyora.data.model.Business;
+import com.example.bargiyora.model.Business;
 
 import java.util.List;
 

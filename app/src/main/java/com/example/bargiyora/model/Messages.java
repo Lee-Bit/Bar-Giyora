@@ -1,12 +1,19 @@
-package com.example.bargiyora.data.model;
+package com.example.bargiyora.model;
 
+
+import com.google.gson.annotations.SerializedName;
 
 public class Messages {
-    // don't forget to add publisher
+    //TODO don't forget to add publisher
+    @SerializedName("id")
     private String mID;
+    @SerializedName("title")
     private String mTitle;
+    @SerializedName("content")
     private String mContent;
+    @SerializedName("date")
     private String mDate;
+    @SerializedName("time")
     private String mTime;
 
     public Messages(String id, String title, String content, String date, String time){

@@ -1,6 +1,4 @@
-package com.example.bargiyora.data.model;
-
-import java.util.Date;
+package com.example.bargiyora.model;
 
 public class DeliveryAndSale {
     //don't forget to add publisher.

@@ -1,4 +1,4 @@
-package com.example.bargiyora.data.model;
+package com.example.bargiyora.model;
 
 public class ManagerCategory {
     //don't forget to add manager id

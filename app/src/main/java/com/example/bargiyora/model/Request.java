@@ -1,6 +1,4 @@
-package com.example.bargiyora.data.model;
-
-import java.util.Date;
+package com.example.bargiyora.model;
 
 public class Request {
     //don't forget to add type, publisher

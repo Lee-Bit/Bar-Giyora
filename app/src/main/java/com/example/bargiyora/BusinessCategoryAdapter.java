@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bargiyora.data.model.BusinessCategory;
+import com.example.bargiyora.model.BusinessCategory;
 
 import java.util.List;
 
