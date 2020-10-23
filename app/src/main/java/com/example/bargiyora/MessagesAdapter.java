@@ -30,7 +30,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
     public void onBindViewHolder(@NonNull MessagesAdapter.MessagesViewHolder holder, int position) {
         Messages item = messagesList.get(position);
         holder.tvMessageTitle.setText(item.getTitle());
-//        holder.tvMessagePublisherName.setText();
+        holder.tvMessagePublisherName.setText(item.getFullName());
         holder.tvMessageDate.setText(item.getDate());
         holder.tvMessageTime.setText(item.getTime());
         holder.tvMessageContent.setText(item.getContent());
