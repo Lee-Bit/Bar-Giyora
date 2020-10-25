@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startMessageActivity();
                 break;
             case R.id.ivSettingsIconID:
-
+                startSettingsActivity();
                 break;
             case R.id.ivDeliveryAndSaleIconID:
                 startDeliveryAndSaleBoardActivity();
@@ -99,15 +99,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-
-    //    private void startLoginActivity() {
-//        Intent intent = new Intent(this, LoginActivity.class);
-//                startActivity(intent);
-//    }
-//    private void startRegistrationActivity() {
-//        Intent intent = new Intent(this, RegistrationActivity.class);
-//        startActivity(intent);
-//    }
     private void startRequestActivity() {
         Intent intent = new Intent(this, NewRequestActivity.class);
         startActivity(intent);
@@ -118,10 +109,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
-    //    private void startSettingsActivity() {
-//        Intent intent = new Intent(this, NewRequestActivity.class); need to change the activity
-//        startActivity(intent);
-//    }
+        private void startSettingsActivity() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
     private void startDeliveryAndSaleBoardActivity() {
         Intent intent = new Intent(this, DeliveryAndSaleBoardActivity.class);
         startActivity(intent);

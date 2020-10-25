@@ -61,5 +61,22 @@
     <string name="forSale">למכירה</string>
     <string name="forDelivery">למסירה</string>
 
+    <string name="add_new_user">הוספת משתמש חדש</string>
+    <string name="change_email">עדכון מייל</string>
+    <string name="change_password">שינוי סיסמא</string>
+    <string name="old_email">מייל נוכחי</string>
+    <string name="new_email">מייל חדש</string>
+    <string name="old_password">סיסמא נוכחית</string>
+    <string name="new_password">סיסמא חדשה</string>
+    <string name="submit">עדכן</string>
+    <string name="is_manager">הגדר כמנהל</string>
+    
+    <string name="status">סטטוס</string>
+    <string name="publish_date">תאריך פניה</string>
+    <string name="publish_time">שעת פניה</string>
+    <string name="finish_date">תאריך סיום</string>
+    <string name="finish_time">שעת סיום</string>
+
+
     <string name="action_settings">Settings</string>
 </resources>

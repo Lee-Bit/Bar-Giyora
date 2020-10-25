@@ -8,33 +8,26 @@ import android.widget.TextView;
 
 public class ResidentServiceActivity extends AppCompatActivity {
 
-    private TextView tvPostService, tvPostDetails, tvSecuringService, tvSecuringDetails,
-            tvBranchCollectionService, tvBranchCollectionDetails, tvLumpyWasteCollectionService, tvLumpyWasteCollectionDetails,
-            tvSynagogueService, tvSynagogueDetails, tvMikvehService, tvMikvehDetails;
+    private TextView tvPostDetails, tvSecuringDetails, tvBranchCollectionDetails,
+            tvLumpyWasteCollectionDetails, tvSynagogueDetails, tvMikvehDetails;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resident_service);
 
-        tvPostService=findViewById(R.id.tvPostServiceID);
         tvPostDetails=findViewById(R.id.tvPostDetailsID);
-        tvSecuringService=findViewById(R.id.tvSecuringServiceID);
         tvSecuringDetails=findViewById(R.id.tvSecuringDetailsID);
-        tvBranchCollectionService=findViewById(R.id.tvBranchCollectionServiceID);
         tvBranchCollectionDetails=findViewById(R.id.tvBranchCollectionDetailsID);
-        tvLumpyWasteCollectionService=findViewById(R.id.tvLumpyWasteCollectionServiceID);
         tvLumpyWasteCollectionDetails=findViewById(R.id.tvLumpyWasteCollectionDetailsID);
-        tvSynagogueService=findViewById(R.id.tvSynagogueServiceID);
         tvSynagogueDetails=findViewById(R.id.tvSynagogueDetailsID);
-        tvMikvehService=findViewById(R.id.tvMikvehServiceID);
         tvMikvehDetails=findViewById(R.id.tvMikvehDetailsID);
 
-        tvPostService.setOnClickListener(new Listener());
-        tvSecuringService.setOnClickListener(new Listener());
-        tvBranchCollectionService.setOnClickListener(new Listener());
-        tvLumpyWasteCollectionService.setOnClickListener(new Listener());
-        tvSynagogueService.setOnClickListener(new Listener());
-        tvMikvehService.setOnClickListener(new Listener());
+        findViewById(R.id.tvPostServiceID).setOnClickListener(new Listener());
+        findViewById(R.id.tvSecuringServiceID).setOnClickListener(new Listener());
+        findViewById(R.id.tvBranchCollectionServiceID).setOnClickListener(new Listener());
+        findViewById(R.id.tvLumpyWasteCollectionServiceID).setOnClickListener(new Listener());
+        findViewById(R.id.tvSynagogueServiceID).setOnClickListener(new Listener());
+        findViewById(R.id.tvMikvehServiceID).setOnClickListener(new Listener());
     }
 
     private class Listener implements View.OnClickListener{

@@ -21,16 +21,10 @@ public class Request {
     }
 
     public String getId(){return mId;}
-
     public boolean getStatus(){return mStatus;}
-
     public String getContent(){return mContent;}
-
     public String getPublishDate(){return mPublishDate;}
-
     public String getPublishTime(){return mPublishTime;}
-
     public String getFinishDate(){return mFinishDate;}
-
     public String getFinishTime(){return mFinishTime;}
 }
