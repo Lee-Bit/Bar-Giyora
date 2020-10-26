@@ -1,11 +1,18 @@
 package com.example.bargiyora.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Business {
     //don't forget to add category if it necessary
+    @SerializedName("id")
     private String mId;
+    @SerializedName("name")
     private String mName;
+    @SerializedName("details")
     private String mContent;
+    @SerializedName("phone")
     private String mPhone;
+    @SerializedName("address")
     private String mAddress;
 
     public Business(String id, String name, String content, String phone, String address){

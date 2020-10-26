@@ -4,11 +4,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.bargiyora.model.DataManager;
 import com.example.bargiyora.model.Site;
+import com.example.bargiyora.server_api.BaseResponse;
+import com.example.bargiyora.server_api.DeleteSiteRequest;
+import com.example.bargiyora.server_api.IOnServerRequestListener;
+import com.example.bargiyora.server_api.ServerRequestHandler;
 
 import java.util.List;
 
@@ -27,12 +33,35 @@ public class SiteListAdapter extends RecyclerView.Adapter<SiteListAdapter.SiteLi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SiteListAdapter.SiteListViewHolder holder, int position) {
-        Site item =siteList.get(position);
+    public void onBindViewHolder(@NonNull SiteListAdapter.SiteListViewHolder holder, final int position) {
+        final Site item =siteList.get(position);
         holder.tvSiteName.setText(item.getName());
         holder.tvSiteContent.setText(item.getContent());
         holder.tvSitePhone.setText(item.getPhone());
         holder.tvSiteAddress.setText(item.getAddress());
+
+        /*
+        // TODO: 10/26/2020 fix this
+        holder.tvSitePhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String userId = DataManager.getInstance().getUser().getPhone();
+                DeleteSiteRequest deleteSiteRequest = new DeleteSiteRequest(userId ,item.getId());
+                ServerRequestHandler.deleteSite(deleteSiteRequest, new IOnServerRequestListener() {
+                    @Override
+                    public <T> void onSuccess(BaseResponse<T> baseResponse) {
+                        notifyItemRemoved(position);
+                    }
+
+                    @Override
+                    public void onFailure() {
+
+                    }
+                });
+            }
+        });
+         */
+
     }
 
     @Override

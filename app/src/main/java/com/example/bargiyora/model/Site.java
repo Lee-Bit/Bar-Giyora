@@ -9,8 +9,6 @@ public class Site {
     private String mName;
     @SerializedName("phone")
     private String mPhone;
-    @SerializedName("category")
-    private String mCategory;
     @SerializedName("content")
     private String mContent;
     @SerializedName("address")
@@ -18,11 +16,10 @@ public class Site {
     @SerializedName("categoryId")
     private String mCategoryId;
 
-    public Site(String id, String name, String phone, String category, String content, String address, String categoryId){
+    public Site(String id, String name, String phone, String content, String address, String categoryId){
         this.mId=id;
         this.mName=name;
         this.mPhone=phone;
-        this.mCategory=category;
         this.mContent=content;
         this.mAddress=address;
         this.mCategoryId=categoryId;
@@ -31,7 +28,6 @@ public class Site {
     public String getId(){return mId;}
     public String getName(){return mName;}
     public String getPhone(){return mPhone;}
-    public String getCategory(){return mCategory;}
     public String getContent(){return mContent;}
     public String getAddress(){return  mAddress;}
     public String getCategoryId(){return mCategoryId;}

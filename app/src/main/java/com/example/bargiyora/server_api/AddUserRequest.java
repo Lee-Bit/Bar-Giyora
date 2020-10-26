@@ -7,8 +7,8 @@ public class AddUserRequest extends User {
     @SerializedName("id")
     private String adminId;
 
-    public AddUserRequest(String email, String firsName, String lastName, String phone, boolean isAdmin, String adminId) {
-        super(email, firsName, lastName, phone, isAdmin);
+    public AddUserRequest(String email, String firsName, String lastName, String phone, boolean isAdmin, String password, String adminId) {
+        super(email, firsName, lastName, phone, isAdmin, password);
         this.adminId = adminId;
     }
 }

@@ -4,6 +4,7 @@ import com.example.bargiyora.model.Business;
 import com.example.bargiyora.model.BusinessCategory;
 import com.example.bargiyora.model.DeliveryAndSale;
 import com.example.bargiyora.model.Messages;
+import com.example.bargiyora.model.Request;
 import com.example.bargiyora.model.Site;
 import com.example.bargiyora.model.User;
 
@@ -44,7 +45,7 @@ public class ServerRequestHandler {
 
     public static void addUser(AddUserRequest addUserRequest, IOnServerRequestListener iOnServerRequestListener){
         if(addUserRequest != null){
-            Call<BaseResponse<Integer>> call= ClientApi.getServerApi().addUser(addUserRequest);
+            Call<BaseResponse<Integer>> call = ClientApi.getServerApi().addUser(addUserRequest);
             createCallbackListener(call, iOnServerRequestListener);
             /*
             call.enqueue(new Callback<BaseResponse<Integer>>() {
@@ -247,10 +248,18 @@ public class ServerRequestHandler {
 
     public static void deleteSite(DeleteSiteRequest deleteSiteRequest, IOnServerRequestListener iOnServerRequestListener){
         if(deleteSiteRequest != null){
-            Call<BaseResponse<Integer>> call= ClientApi.getServerApi().deleteSite(deleteSiteRequest);
+            Call<BaseResponse<Integer>> call = ClientApi.getServerApi().deleteSite(deleteSiteRequest);
             createCallbackListener(call,iOnServerRequestListener);
         }
     }
+
+    public static void addSite(AddSiteRequest addSiteRequest, IOnServerRequestListener iOnServerRequestListener){
+        if (addSiteRequest != null){
+            Call<BaseResponse<Site>> call = ClientApi.getServerApi().addSite(addSiteRequest);
+            createCallbackListener(call, iOnServerRequestListener);
+        }
+    }
+
 
 
 
@@ -266,9 +275,9 @@ public class ServerRequestHandler {
         }
     }
 
-    public static void deleteItem(DeliveryAndSale deliveryAndSale, IOnServerRequestListener iOnServerRequestListener){
-        if(deliveryAndSale != null){
-            Call<BaseResponse<Integer>> call= ClientApi.getServerApi().deleteItem(deliveryAndSale);
+    public static void deleteItem(DeleteDeliveryAndSaleRequest deleteDeliveryAndSaleRequest, IOnServerRequestListener iOnServerRequestListener){
+        if(deleteDeliveryAndSaleRequest != null){
+            Call<BaseResponse<Integer>> call= ClientApi.getServerApi().deleteItem(deleteDeliveryAndSaleRequest);
             createCallbackListener(call,iOnServerRequestListener);
         }
     }
@@ -320,6 +329,29 @@ public class ServerRequestHandler {
             createCallbackListener(call,iOnServerRequestListener);
         }
     }
+
+    public static void addBusiness(AddBusinessRequest addBusinessRequest, IOnServerRequestListener iOnServerRequestListener){
+        if (addBusinessRequest != null){
+            Call<BaseResponse<Business>> call = ClientApi.getServerApi().addBusiness(addBusinessRequest);
+            createCallbackListener(call, iOnServerRequestListener);
+        }
+    }
+
+
+
+    public static void getRequestList(String userId, IOnServerRequestListener iOnServerRequestListener){
+        Call<BaseResponse<List<Request>>> call = ClientApi.getServerApi().getRequestList(userId);
+        createCallbackListener(call, iOnServerRequestListener);
+    }
+
+    public static void updateStatus(UpdateStatusRequest updateStatusRequest, IOnServerRequestListener iOnServerRequestListener){
+        if (updateStatusRequest != null){
+            Call<BaseResponse<Request>> call = ClientApi.getServerApi().updateStatus(updateStatusRequest);
+            createCallbackListener(call, iOnServerRequestListener);
+        }
+    }
+
+
 
 
     private static <T> void createCallbackListener(Call<BaseResponse<T>> call, IOnServerRequestListener iOnServerRequestListener){

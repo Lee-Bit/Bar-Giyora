@@ -5,14 +5,132 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    tools:ignore="ContentDescription"
+    android:layoutDirection="rtl"
     tools:context=".BusinessCategoryActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcBusinessCategory"
+    <LinearLayout
         android:layout_width="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="4"
-        tools:listitem="@layout/row_business_category"
-        android:layout_height="wrap_content"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/llFoodID"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_food"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:text="@string/food"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llConstructionID"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_construction"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:text="@string/construction"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/llElectricID"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_electric"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:text="@string/electric"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llCosmeticID"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_beauty"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cosmetic"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/llWoodID"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_wood"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wood"/>
+        </LinearLayout>
+
+    </LinearLayout>
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/rcBusinessCategory"-->
+<!--        android:layout_width="match_parent"-->
+<!--        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+<!--        app:spanCount="4"-->
+<!--        tools:listitem="@layout/row_business_category"-->
+<!--        android:layout_height="wrap_content"/>-->
 
 </LinearLayout>

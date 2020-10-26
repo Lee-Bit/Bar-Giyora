@@ -4,127 +4,242 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layoutDirection="rtl"
+    android:orientation="vertical"
+    tools:ignore="ContentDescription"
     tools:context=".SettingsActivity">
 
-    <TextView
-        android:id="@+id/tvAddNewUserID"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/add_new_user"
-        android:visibility="visible"/>
-    <TextView
-        android:id="@+id/tvChangeEmailID"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/change_email"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/entrance" />
+
     <LinearLayout
-        android:id="@+id/llChangEmailID"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="visible">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal">
+
             <TextView
-                android:id="@+id/tvOldEmailID"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/old_email"/>
-            <EditText
-                android:id="@+id/etOldEmailID"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/firstName" />
+
+            <TextView
+                android:id="@+id/tvFirstNameID"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal">
+
             <TextView
-                android:id="@+id/tvNewEmailID"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/new_email"/>
-            <EditText
-                android:id="@+id/etNewEmailID"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/lastName" />
+
+            <TextView
+                android:id="@+id/tvLastNameID"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal">
+
             <TextView
-                android:id="@+id/tvChangeEmailPasswordID"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/password"/>
-            <EditText
-                android:id="@+id/etValidPasswordID"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/phone" />
+
+            <TextView
+                android:id="@+id/tvPhoneID"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2" />
         </LinearLayout>
-        <TextView
-            android:id="@+id/tvChangeEmailSubmitID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/submit"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/email" />
+
+            <TextView
+                android:id="@+id/tvEmailID"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2" />
+
+            <ImageView
+                android:id="@+id/ivEditID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_edit"
+                />
+        </LinearLayout>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tvChangePasswordID"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/change_password"/>
     <LinearLayout
-        android:id="@+id/llChangePasswordID"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="visible"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="vertical">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/tvOldPasswordID"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/old_email"/>
-            <EditText
-                android:id="@+id/etOldPasswordID"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/tvNewPasswordID"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/new_password"/>
-            <EditText
-                android:id="@+id/etNewPasswordID"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-        </LinearLayout>
+
         <TextView
-            android:id="@+id/tvChangePasswordSubmitID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/submit"/>
+            android:id="@+id/tvChangePasswordID"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/change_password" />
+
+        <TextView
+            android:id="@+id/tvAddNewUserID"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/add_new_user"
+            android:visibility="visible" />
     </LinearLayout>
+    <!--    <TextView-->
+    <!--        android:id="@+id/tvChangeEmailID"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/change_email"/>-->
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/llChangEmailID"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:visibility="visible">-->
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="horizontal">-->
+    <!--            <TextView-->
+    <!--                android:id="@+id/tvOldEmailID"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:text="@string/old_email"/>-->
+    <!--            <EditText-->
+    <!--                android:id="@+id/etOldEmailID"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_weight="1"/>-->
+    <!--        </LinearLayout>-->
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="horizontal">-->
+    <!--            <TextView-->
+    <!--                android:id="@+id/tvNewEmailID"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:text="@string/new_email"/>-->
+    <!--            <EditText-->
+    <!--                android:id="@+id/etNewEmailID"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_weight="1"/>-->
+    <!--        </LinearLayout>-->
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="horizontal">-->
+    <!--            <TextView-->
+    <!--                android:id="@+id/tvChangeEmailPasswordID"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:text="@string/password"/>-->
+    <!--            <EditText-->
+    <!--                android:id="@+id/etValidPasswordID"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_weight="1"/>-->
+    <!--        </LinearLayout>-->
+    <!--        <TextView-->
+    <!--            android:id="@+id/tvChangeEmailSubmitID"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:text="@string/submit"/>-->
+    <!--    </LinearLayout>-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tvChangePasswordID"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/change_password"/>-->
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/llChangePasswordID"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:visibility="visible"-->
+    <!--        android:orientation="vertical">-->
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="horizontal">-->
+    <!--            <TextView-->
+    <!--                android:id="@+id/tvOldPasswordID"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:text="@string/old_email"/>-->
+    <!--            <EditText-->
+    <!--                android:id="@+id/etOldPasswordID"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_weight="1"/>-->
+    <!--        </LinearLayout>-->
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="horizontal">-->
+    <!--            <TextView-->
+    <!--                android:id="@+id/tvNewPasswordID"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:text="@string/new_password"/>-->
+    <!--            <EditText-->
+    <!--                android:id="@+id/etNewPasswordID"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_weight="1"/>-->
+    <!--        </LinearLayout>-->
+    <!--        <TextView-->
+    <!--            android:id="@+id/tvChangePasswordSubmitID"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:text="@string/submit"/>-->
+    <!--    </LinearLayout>-->
 
 </LinearLayout>

@@ -4,6 +4,7 @@ import com.example.bargiyora.model.Business;
 import com.example.bargiyora.model.BusinessCategory;
 import com.example.bargiyora.model.DeliveryAndSale;
 import com.example.bargiyora.model.Messages;
+import com.example.bargiyora.model.Request;
 import com.example.bargiyora.model.Site;
 import com.example.bargiyora.model.User;
 
@@ -45,27 +46,33 @@ public interface IServerApi {
 
 
 //sites requests
-//TODO add sites?
     @GET("sites/getSitesByCategoryId")
     Call<BaseResponse<List<Site>>> getSitesByCategoryId(@Query("categoryId") String categoryId);
 
-    @POST("sites/delete")
+    @DELETE("sites/delete")
     Call<BaseResponse<Integer>> deleteSite(@Body DeleteSiteRequest deleteSiteRequest);
 
+    @POST("sites/add")
+    Call<BaseResponse<Site>> addSite(@Body AddSiteRequest addSiteRequest);
 
-//business requests
-    //TODO add business, add & delete & update businessCategory
+
+    //business requests
+    //TODO delete businessCategory?
     @GET("business/getBusinessCategoryList")
     Call<BaseResponse<List<BusinessCategory>>> getBusinessCategoryList();
 
     @GET("business/getAllBusinessByCategory")
     Call<BaseResponse<List<Business>>> getBusinessByCategory(@Query("categoryId") String categoryId);
 
-    @POST("business/delete")
+    @DELETE("business/delete")
     Call<BaseResponse<Integer>> deleteBusiness(@Body DeleteBusinessRequest deleteBusinessRequest);
 
+    @POST("business/add")
+    Call<BaseResponse<Business>> addBusiness(@Body AddBusinessRequest addBusinessRequest);
 
-//item requests
+
+
+    //item requests
     @GET("item/getList")
     Call<BaseResponse<List<DeliveryAndSale>>> getItemList();
 
@@ -73,8 +80,19 @@ public interface IServerApi {
     Call<BaseResponse<DeliveryAndSale>> addItem(@Body DeliveryAndSale deliveryAndSale);
 
     @POST("item/delete")
-    Call<BaseResponse<Integer>> deleteItem(@Body DeliveryAndSale deliveryAndSale);
+    Call<BaseResponse<Integer>> deleteItem(@Body DeleteDeliveryAndSaleRequest deleteDeliveryAndSaleRequest);
 
     @POST("item/update")
     Call<BaseResponse<DeliveryAndSale>> updateItem(@Body DeliveryAndSale deliveryAndSale);
+
+
+    //Request requests
+    @GET("request/getList")
+    Call<BaseResponse<List<Request>>> getRequestList(@Query("userId") String userId);
+
+    @POST("request/updateStatus")
+    Call<BaseResponse<Request>> updateStatus(@Body UpdateStatusRequest updateStatusRequest);
+
+    @POST("request/add")
+    Call<BaseResponse<Request>> addRequest(@Body Request request);
 }
