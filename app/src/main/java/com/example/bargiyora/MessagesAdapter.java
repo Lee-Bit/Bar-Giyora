@@ -27,6 +27,14 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
         this.messagesList = messagesList;
     }
 
+    public void addMessage(Messages messages) {
+        if (messages != null) {
+            int index = messagesList.size();
+            messagesList.add(messages);
+            notifyItemInserted(index);
+        }
+    }
+
     @NonNull
     @Override
     public MessagesAdapter.MessagesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -87,8 +95,8 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
         }
     }
 
-    private void messageExpand(MessagesViewHolder holder){
-        if (holder.llMessageDetails.getVisibility()== View.GONE){
+    private void messageExpand(MessagesViewHolder holder) {
+        if (holder.llMessageDetails.getVisibility() == View.GONE) {
             holder.llMessageDetails.setVisibility(View.VISIBLE);
             holder.ivExpand.setImageResource(R.drawable.ic_expand_less);
             return;
@@ -97,7 +105,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
         holder.ivExpand.setImageResource(R.drawable.ic_expand_more);
     }
 
-    private void messageDelete(int position){
+    private void messageDelete(int position) {
         String userId = DataManager.getInstance().getUser().getPhone();
         DeleteMessageRequest deleteMessageRequest = new DeleteMessageRequest(userId, messagesList.get(position).getId());
         ServerRequestHandler.deleteMessage(deleteMessageRequest, new IOnServerRequestListener() {

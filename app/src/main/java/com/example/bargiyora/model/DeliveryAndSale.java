@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 public class DeliveryAndSale {
     @SerializedName("id")
     private String mId;
-    @SerializedName("type")
-    private boolean mType;
+    @SerializedName("forSale")
+    private boolean mForSale;
     @SerializedName("price")
     private String mPrice;
     @SerializedName("date")
@@ -19,13 +19,13 @@ public class DeliveryAndSale {
     private String mPublisherFirstName;
     @SerializedName("lastName")
     private String mPublisherLastName;
-    @SerializedName("phone")
+    @SerializedName("publisher")
     private String mPublisherPhone;
 
-    public DeliveryAndSale(String id, boolean type, String price, String date, String name, String content,
+    public DeliveryAndSale(String id, boolean forSale, String price, String date, String name, String content,
                            String publisherFirstName, String publisherLastName, String publisherPhone){
         this.mId=id;
-        this.mType=type;
+        this.mForSale=forSale;
         this.mPrice=price;
         this.mDate=date;
         this.mName=name;
@@ -36,7 +36,7 @@ public class DeliveryAndSale {
     }
 
     public String getID(){return mId;}
-    public boolean getType(){return mType;}
+    public boolean getType(){return mForSale;}
     public String getPrice(){return mPrice;}
     public String getDate(){return mDate;}
     public String getName(){return mName;}

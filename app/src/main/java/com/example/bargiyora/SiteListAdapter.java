@@ -27,6 +27,14 @@ public class SiteListAdapter extends RecyclerView.Adapter<SiteListAdapter.SiteLi
         this.siteList = siteList;
     }
 
+    public void addSite(Site site){
+        if (site!=null){
+            int index=siteList.size();
+            siteList.add(site);
+            notifyItemInserted(index);
+        }
+    }
+
     @NonNull
     @Override
     public SiteListAdapter.SiteListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

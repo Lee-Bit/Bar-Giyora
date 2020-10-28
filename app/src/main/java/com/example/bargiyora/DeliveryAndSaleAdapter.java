@@ -27,6 +27,14 @@ public class DeliveryAndSaleAdapter extends RecyclerView.Adapter<DeliveryAndSale
         this.deliveryAndSaleList = deliveryAndSaleList;
     }
 
+    public void addItem(DeliveryAndSale deliveryAndSale) {
+        if(deliveryAndSale != null) {
+            int index = deliveryAndSaleList.size();
+            deliveryAndSaleList.add(deliveryAndSale);
+            notifyItemInserted(index);
+        }
+    }
+
     @NonNull
     @Override
     public DeliveryAndSaleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

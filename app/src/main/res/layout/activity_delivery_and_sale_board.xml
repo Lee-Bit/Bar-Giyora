@@ -1,28 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    android:orientation="vertical"
+    tools:context=".DeliveryAndSaleBoardActivity">
 
-    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/llAddItemBtn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layoutDirection="rtl"
-        android:orientation="vertical"
-        tools:context=".DeliveryAndSaleBoardActivity">
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="#000000"
+        android:padding="1dp">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcDeliveryAndSaleBoardID"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            tools:listitem="@layout/row_delivery_and_sale_board" />
+            android:background="#ffffff"
+            android:paddingStart="30dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="30dp"
+            android:paddingBottom="5dp"
+            android:text="@string/add_item_title"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-        <ProgressBar
-            android:id="@+id/progressBarID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true" />
+    </LinearLayout>
 
-    </RelativeLayout>
-</ScrollView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/llAddItemBtn"
+        android:background="#000000"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcDeliveryAndSaleBoardID"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/llAddItemBtn"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_delivery_and_sale_board" />
+
+    <ProgressBar
+        android:id="@+id/progressBarID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>

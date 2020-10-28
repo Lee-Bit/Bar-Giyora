@@ -56,6 +56,13 @@
     <string name="pools">מעיינות ובריכות</string>
     <string name="trips">מסלולי טבע</string>
     <string name="various">שונות</string>
+    <string name="add_restaurant_title">הוספת מסעדה</string>
+    <string name="add_pool_title">הוספת בריכה</string>
+    <string name="add_trip_title">הוספת מסלול טבע</string>
+    <string name="add_various_title">הוספת שירותים שונים</string>
+
+    <string name="name">שם:</string>
+    <string name="details">פרטים נוספים:</string>
 
     <string name="food">מזון</string>
     <string name="construction">חומרי בניין</string>
@@ -63,9 +70,13 @@
     <string name="cosmetic">קוסמטיקה</string>
     <string name="wood">עבודות עץ</string>
 
+    <string name="add_item_title">הוספת פריט חדש</string>
     <string name="forSale">למכירה</string>
     <string name="forDelivery">למסירה</string>
-    <string name="price">מחיר</string>
+    <string name="price">מחיר:</string>
+    <string name="item_name">שם הפריט:</string>
+    <string name="item_details">תיאור הפריט:</string>
+
 
     <string name="add_new_user">הוספת משתמש חדש</string>
     <string name="change_email">עדכון מייל</string>
@@ -87,6 +98,11 @@
     <string name="maintenance">תחזוקה</string>
     <string name="culture">תרבות והעשרה</string>
     <string name="other">אחר</string>
+
+    <string name="add_message_title">הוספת הודעה חדשה</string>
+    <string name="message_title">נושא:</string>
+    <string name="message_content">תוכן ההודעה:</string>
+
 
     <string name="title_activity_request">RequestActivity</string>
     <string name="action_settings">Settings</string>

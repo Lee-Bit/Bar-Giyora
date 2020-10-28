@@ -40,4 +40,5 @@ public class NewRequestActivity extends AppCompatActivity {
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
     }
+
 }
