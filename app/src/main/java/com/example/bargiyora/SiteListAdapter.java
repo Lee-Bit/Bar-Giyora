@@ -3,6 +3,8 @@ package com.example.bargiyora;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +20,7 @@ import com.example.bargiyora.server_api.ServerRequestHandler;
 
 import java.util.List;
 
-public class SiteListAdapter extends RecyclerView.Adapter<SiteListAdapter.SiteListViewHolder>{
+public class SiteListAdapter extends RecyclerView.Adapter<SiteListAdapter.SiteListViewHolder> {
     private List<Site> siteList;
 
     public SiteListAdapter(List<Site> siteList) {
@@ -28,49 +30,46 @@ public class SiteListAdapter extends RecyclerView.Adapter<SiteListAdapter.SiteLi
     @NonNull
     @Override
     public SiteListAdapter.SiteListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.row_site,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_site, parent, false);
         return new SiteListViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull SiteListAdapter.SiteListViewHolder holder, final int position) {
-        final Site item =siteList.get(position);
+        final Site item = siteList.get(position);
+        boolean isAdmin = DataManager.getInstance().getUser().isAdmin();
+
         holder.tvSiteName.setText(item.getName());
         holder.tvSiteContent.setText(item.getContent());
         holder.tvSitePhone.setText(item.getPhone());
         holder.tvSiteAddress.setText(item.getAddress());
-
-        /*
-        // TODO: 10/26/2020 fix this
-        holder.tvSitePhone.setOnClickListener(new View.OnClickListener() {
+        holder.ivExpand.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String userId = DataManager.getInstance().getUser().getPhone();
-                DeleteSiteRequest deleteSiteRequest = new DeleteSiteRequest(userId ,item.getId());
-                ServerRequestHandler.deleteSite(deleteSiteRequest, new IOnServerRequestListener() {
-                    @Override
-                    public <T> void onSuccess(BaseResponse<T> baseResponse) {
-                        notifyItemRemoved(position);
-                    }
-
-                    @Override
-                    public void onFailure() {
-
-                    }
-                });
+                siteExpand(holder);
             }
         });
-         */
-
+        holder.ivDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                siteDelete(position);
+            }
+        });
+        if (isAdmin)
+            holder.ivDelete.setVisibility(View.VISIBLE);
+        else holder.ivDelete.setVisibility(View.GONE);
+        holder.llSiteDetails.setVisibility(View.GONE);
     }
 
     @Override
     public int getItemCount() {
-        return siteList != null ? siteList.size() :0;
+        return siteList != null ? siteList.size() : 0;
     }
 
-    class SiteListViewHolder extends RecyclerView.ViewHolder{
+    class SiteListViewHolder extends RecyclerView.ViewHolder {
         private final TextView tvSiteName, tvSiteContent, tvSitePhone, tvSiteAddress;
+        private final LinearLayout llSiteDetails;
+        private final ImageView ivExpand, ivDelete;
 
         public SiteListViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -78,6 +77,41 @@ public class SiteListAdapter extends RecyclerView.Adapter<SiteListAdapter.SiteLi
             tvSiteContent = itemView.findViewById(R.id.tvSiteContentID);
             tvSitePhone = itemView.findViewById(R.id.tvSitePhoneID);
             tvSiteAddress = itemView.findViewById(R.id.tvSiteAddressID);
+            llSiteDetails = itemView.findViewById(R.id.llSiteDetailsID);
+            ivExpand = itemView.findViewById(R.id.ivExpandID);
+            ivDelete = itemView.findViewById(R.id.ivDeleteID);
         }
+    }
+
+    private void siteExpand(SiteListViewHolder holder) {
+        if (holder.llSiteDetails.getVisibility() == View.GONE) {
+            holder.llSiteDetails.setVisibility(View.VISIBLE);
+            holder.ivExpand.setImageResource(R.drawable.ic_expand_less);
+            return;
+        }
+        holder.llSiteDetails.setVisibility(View.GONE);
+        holder.ivExpand.setImageResource(R.drawable.ic_expand_more);
+    }
+
+    private void siteDelete(int position) {
+        String userId = DataManager.getInstance().getUser().getPhone();
+        DeleteSiteRequest deleteSiteRequest = new DeleteSiteRequest(userId, siteList.get(position).getId());
+        ServerRequestHandler.deleteSite(deleteSiteRequest, new IOnServerRequestListener() {
+            @Override
+            public <T> void onSuccess(BaseResponse<T> baseResponse) {
+                if (baseResponse != null) {
+                    if ((Integer) baseResponse.getResults() > 0) {
+                        siteList.remove(position);
+                        notifyItemRemoved(position);
+                    }
+                } else
+                    return; // TODO: 10/27/2020 add error
+            }
+
+            @Override
+            public void onFailure() {
+// TODO: 10/27/2020 fix this
+            }
+        });
     }
 }

@@ -23,24 +23,44 @@ public class Messages {
     private String mPublisherLastName;
 
     public Messages(String id, String title, String content, String date, String time,
-                    String publisherPhone, String publisherFirstName, String publisherLastName){
-        this.mID=id;
-        this.mTitle=title;
-        this.mContent=content;
-        this.mDate=date;
-        this.mTime=time;
-        this.mPublisherPhone=publisherPhone;
-        this.mPublisherFirstName=publisherFirstName;
-        this.mPublisherLastName=publisherLastName;
+                    String publisherPhone, String publisherFirstName, String publisherLastName) {
+        this.mID = id;
+        this.mTitle = title;
+        this.mContent = content;
+        this.mDate = date;
+        this.mTime = time;
+        this.mPublisherPhone = publisherPhone;
+        this.mPublisherFirstName = publisherFirstName;
+        this.mPublisherLastName = publisherLastName;
     }
 
-    public String getID(){return mID;}
-    public String getTitle(){return mTitle;}
-    public String getContent(){return mContent;}
-    public String getDate(){return mDate;}
-    public String getTime(){return mTime;}
-    public String getPublisherPhone(){return mPublisherPhone;}
-//    public String getPublisherLastName(){return mPublisherLastName;}
+    public String getId() {
+        return mID;
+    }
+
+    public String getTitle() {
+        return mTitle;
+    }
+
+    public String getContent() {
+        return mContent;
+    }
+
+    public String getDate() {
+        return mDate;
+    }
+
+    public String getTime() {
+        return mTime;
+    }
+
+    public String getPublisherPhone() {
+        return mPublisherPhone;
+    }
+
+    //    public String getPublisherLastName(){return mPublisherLastName;}
 //    public String getPublisherFirstName(){return mPublisherFirstName;}
-    public String getFullName(){return mPublisherFirstName+mPublisherLastName;}
+    public String getFullName() {
+        return mPublisherFirstName + mPublisherLastName;
+    }
 }

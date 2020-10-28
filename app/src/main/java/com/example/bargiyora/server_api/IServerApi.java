@@ -38,7 +38,7 @@ public interface IServerApi {
     @GET("messages/getList")
     Call<BaseResponse<List<Messages>>> getMessageList();
 
-    @DELETE("messages/delete")
+    @POST("messages/delete")
     Call<BaseResponse<Integer>> deleteMessage(@Body DeleteMessageRequest deleteMessageRequest);
 
     @POST("messages/add")
@@ -49,7 +49,7 @@ public interface IServerApi {
     @GET("sites/getSitesByCategoryId")
     Call<BaseResponse<List<Site>>> getSitesByCategoryId(@Query("categoryId") String categoryId);
 
-    @DELETE("sites/delete")
+    @POST("sites/delete")
     Call<BaseResponse<Integer>> deleteSite(@Body DeleteSiteRequest deleteSiteRequest);
 
     @POST("sites/add")
@@ -64,7 +64,7 @@ public interface IServerApi {
     @GET("business/getAllBusinessByCategory")
     Call<BaseResponse<List<Business>>> getBusinessByCategory(@Query("categoryId") String categoryId);
 
-    @DELETE("business/delete")
+    @POST("business/delete")
     Call<BaseResponse<Integer>> deleteBusiness(@Body DeleteBusinessRequest deleteBusinessRequest);
 
     @POST("business/add")
@@ -82,17 +82,17 @@ public interface IServerApi {
     @POST("item/delete")
     Call<BaseResponse<Integer>> deleteItem(@Body DeleteDeliveryAndSaleRequest deleteDeliveryAndSaleRequest);
 
-    @POST("item/update")
-    Call<BaseResponse<DeliveryAndSale>> updateItem(@Body DeliveryAndSale deliveryAndSale);
+//    @POST("item/update")
+//    Call<BaseResponse<DeliveryAndSale>> updateItem(@Body DeliveryAndSale deliveryAndSale);
 
 
     //Request requests
-    @GET("request/getList")
+    @GET("requests/getList")
     Call<BaseResponse<List<Request>>> getRequestList(@Query("userId") String userId);
 
-    @POST("request/updateStatus")
+    @POST("requests/updateStatus")
     Call<BaseResponse<Request>> updateStatus(@Body UpdateStatusRequest updateStatusRequest);
 
-    @POST("request/add")
+    @POST("requests/add")
     Call<BaseResponse<Request>> addRequest(@Body Request request);
 }

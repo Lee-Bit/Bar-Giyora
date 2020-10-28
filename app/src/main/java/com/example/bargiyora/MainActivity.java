@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void startRequestActivity() {
-        Intent intent = new Intent(this, NewRequestActivity.class);
+        Intent intent = new Intent(this, RequestActivity.class);
         startActivity(intent);
     }
 

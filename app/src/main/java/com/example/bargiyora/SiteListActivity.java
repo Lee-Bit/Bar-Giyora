@@ -29,7 +29,7 @@ public class SiteListActivity extends AppCompatActivity implements IOnServerRequ
         if (getIntent().getExtras() != null) {
             value = getIntent().getExtras().getString(EXTRA_KEY);
         }
-        rcSiteList= findViewById(R.id.rcSiteList);
+        rcSiteList= findViewById(R.id.rcSiteListID);
         progressBar=findViewById(R.id.progressBarID);
 
         ServerRequestHandler.getSitesByCategoryId(value, SiteListActivity.this);

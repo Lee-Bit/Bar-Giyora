@@ -282,12 +282,12 @@ public class ServerRequestHandler {
         }
     }
 
-    public static void updateItem(DeliveryAndSale deliveryAndSale, IOnServerRequestListener iOnServerRequestListener){
-        if(deliveryAndSale != null){
-            Call<BaseResponse<DeliveryAndSale>> call= ClientApi.getServerApi().updateItem(deliveryAndSale);
-            createCallbackListener(call,iOnServerRequestListener);
-        }
-    }
+//    public static void updateItem(DeliveryAndSale deliveryAndSale, IOnServerRequestListener iOnServerRequestListener){
+//        if(deliveryAndSale != null){
+//            Call<BaseResponse<DeliveryAndSale>> call= ClientApi.getServerApi().updateItem(deliveryAndSale);
+//            createCallbackListener(call,iOnServerRequestListener);
+//        }
+//    }
 
 
 

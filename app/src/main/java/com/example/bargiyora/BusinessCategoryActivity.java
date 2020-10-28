@@ -37,6 +37,7 @@ public class BusinessCategoryActivity extends AppCompatActivity implements View.
                 break;
             case R.id.llCosmeticID:
                 startBusinessesListActivity(AppSettings.BUSINESS_CATEGORY_COSMETIC);
+                break;
             case R.id.llWoodID:
                 startBusinessesListActivity(AppSettings.BUSINESS_CATEGORY_WOOD);
                 break;

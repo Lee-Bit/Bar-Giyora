@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layoutDirection="rtl"
+    android:orientation="vertical"
+    tools:ignore="ContentDescription">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <ImageView
+            android:id="@+id/ivExpandID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_expand_more" />
+
         <TextView
             android:id="@+id/tvItemTypeID"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
+
         <TextView
             android:id="@+id/tvItemDateID"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
     </LinearLayout>
 
     <LinearLayout
@@ -25,34 +36,67 @@
 
         <TextView
             android:id="@+id/tvItemNameID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/price" />
 
         <TextView
             android:id="@+id/tvItemPriceID"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/llItemDetailsID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvItemPublisherNameID"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/phone" />
+
+            <TextView
+                android:id="@+id/tvItemPublisherPhoneID"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/tvItemPublisherNameID"
+            android:id="@+id/tvItemContentID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/ivDeleteID"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:id="@+id/tvItemPublisherPhoneID"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_delete"
+            android:visibility="visible" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tvItemContentID"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="#000000" />
 </LinearLayout>

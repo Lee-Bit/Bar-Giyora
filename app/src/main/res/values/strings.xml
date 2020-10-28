@@ -55,7 +55,7 @@
     <string name="restaurant">מסעדות</string>
     <string name="pools">מעיינות ובריכות</string>
     <string name="trips">מסלולי טבע</string>
-    <string name="other">שונות</string>
+    <string name="various">שונות</string>
 
     <string name="food">מזון</string>
     <string name="construction">חומרי בניין</string>
@@ -65,6 +65,7 @@
 
     <string name="forSale">למכירה</string>
     <string name="forDelivery">למסירה</string>
+    <string name="price">מחיר</string>
 
     <string name="add_new_user">הוספת משתמש חדש</string>
     <string name="change_email">עדכון מייל</string>
@@ -81,6 +82,11 @@
     <string name="publish_time">שעת פניה</string>
     <string name="finish_date">תאריך סיום</string>
     <string name="finish_time">שעת סיום</string>
+    <string name="address">כתובת</string>
+    <string name="security">בטחון</string>
+    <string name="maintenance">תחזוקה</string>
+    <string name="culture">תרבות והעשרה</string>
+    <string name="other">אחר</string>
 
     <string name="title_activity_request">RequestActivity</string>
     <string name="action_settings">Settings</string>
