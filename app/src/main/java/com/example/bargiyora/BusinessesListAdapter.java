@@ -27,6 +27,13 @@ public class BusinessesListAdapter extends RecyclerView.Adapter<BusinessesListAd
         this.businessesList = businessesList;
     }
 
+    public void addBusiness(Business business){
+        if (business!=null){
+            int index = businessesList.size();
+            businessesList.add(business);
+            notifyItemInserted(index);
+        }
+    }
     @NonNull
     @Override
     public BusinessesListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

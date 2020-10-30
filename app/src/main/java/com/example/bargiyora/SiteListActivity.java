@@ -34,17 +34,18 @@ public class SiteListActivity extends AppCompatActivity implements IOnServerRequ
     private EditText etSiteName, etSitePhone, etSiteAddress, etSiteDetails;
     private SiteListAdapter siteListAdapter;
     private int title;
-    private String value;
-
-
+    private String categoryId;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_site_list);
-        value = "";
+        
+        categoryId = "";
         if (getIntent().getExtras() != null) {
-            value = getIntent().getExtras().getString(EXTRA_KEY);
+            categoryId = getIntent().getExtras().getString(EXTRA_KEY);
         }
+        
         rcSiteList = findViewById(R.id.rcSiteListID);
         progressBar = findViewById(R.id.progressBarID);
         llAddSiteBtn = findViewById(R.id.llAddSiteBtn);
@@ -60,7 +61,7 @@ public class SiteListActivity extends AppCompatActivity implements IOnServerRequ
                 siteOpenDialog();
             }
         });
-        ServerRequestHandler.getSitesByCategoryId(value, SiteListActivity.this);
+        ServerRequestHandler.getSitesByCategoryId(categoryId, SiteListActivity.this);
     }
 
     @Override
@@ -79,7 +80,7 @@ public class SiteListActivity extends AppCompatActivity implements IOnServerRequ
     }
 
     private int getSiteTitle() {
-        switch (value) {
+        switch (categoryId) {
             case AppSettings.AROUND_US_CATEGORY_RESTAURANTS:
                 return R.string.add_restaurant_title;
             case AppSettings.AROUND_US_CATEGORY_POOLS:
@@ -124,7 +125,7 @@ public class SiteListActivity extends AppCompatActivity implements IOnServerRequ
         String phone = etSitePhone.getText().toString();
         String address = etSiteAddress.getText().toString();
         String details = etSiteDetails.getText().toString();
-        AddSiteRequest addSiteRequest = new AddSiteRequest(userId, name, phone, details, address, value);
+        AddSiteRequest addSiteRequest = new AddSiteRequest(userId, name, phone, details, address, categoryId);
         ServerRequestHandler.addSite(addSiteRequest, new IOnServerRequestListener() {
             @Override
             public <T> void onSuccess(BaseResponse<T> baseResponse) {

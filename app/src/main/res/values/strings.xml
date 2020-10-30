@@ -69,6 +69,7 @@
     <string name="electric">עבודות חשמל</string>
     <string name="cosmetic">קוסמטיקה</string>
     <string name="wood">עבודות עץ</string>
+    <string name="add_business_title">הוספת בית עסק</string>
 
     <string name="add_item_title">הוספת פריט חדש</string>
     <string name="forSale">למכירה</string>
