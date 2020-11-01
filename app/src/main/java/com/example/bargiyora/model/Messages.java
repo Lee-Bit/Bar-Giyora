@@ -61,6 +61,6 @@ public class Messages {
     //    public String getPublisherLastName(){return mPublisherLastName;}
 //    public String getPublisherFirstName(){return mPublisherFirstName;}
     public String getFullName() {
-        return mPublisherFirstName + mPublisherLastName;
+        return mPublisherFirstName +" "+ mPublisherLastName;
     }
 }

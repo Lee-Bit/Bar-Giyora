@@ -30,7 +30,7 @@ public class RegistrationActivity extends AppCompatActivity implements IOnServer
         etValidPassword = findViewById(R.id.etRegValidPasswordID);
         cbIsAdmin = findViewById(R.id.cbRegIsAdminID);
 
-        findViewById(R.id.tvRegSubmitID).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.llSubmitBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 addUser();

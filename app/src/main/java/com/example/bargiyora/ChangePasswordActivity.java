@@ -29,7 +29,7 @@ public class ChangePasswordActivity extends AppCompatActivity implements IOnServ
 
         etOldPassword = findViewById(R.id.etOldPasswordID);
         etNewPassword = findViewById(R.id.etNewPasswordID);
-        findViewById(R.id.tvChangePasswordSubmitID).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.llSubmitBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 changePassword();

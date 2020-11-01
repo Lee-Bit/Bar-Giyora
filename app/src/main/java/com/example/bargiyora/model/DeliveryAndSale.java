@@ -42,5 +42,5 @@ public class DeliveryAndSale {
     public String getName(){return mName;}
     public String getContent(){return mContent;}
     public String getPublisherPhone(){return mPublisherPhone;}
-    public String getFullName(){return mPublisherFirstName+mPublisherLastName;}
+    public String getFullName(){return mPublisherFirstName+" "+mPublisherLastName;}
 }

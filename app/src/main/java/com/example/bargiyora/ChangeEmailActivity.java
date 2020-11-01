@@ -32,7 +32,7 @@ public class ChangeEmailActivity extends AppCompatActivity implements IOnServerR
         etNewEmail = findViewById(R.id.etNewEmailID);
         etPassword = findViewById(R.id.etValidPasswordID);
 
-        findViewById(R.id.tvChangeEmailSubmitID).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.llSubmitBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 changeEmail();

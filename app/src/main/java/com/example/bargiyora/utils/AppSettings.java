@@ -7,7 +7,7 @@ public class AppSettings {
     public static final String AROUND_US_CATEGORY_OTHERS = "4444";
 
     public static final String API_URL = "https://bar-giora-api.herokuapp.com/api/";
-//    public static final String API_URL = "https://radiant-bayou-34127.herokuapp.com/api/";
+
 
     public static final String BUSINESS_CATEGORY_FOOD = "1";
     public static final String BUSINESS_CATEGORY_CONSTRUCTION = "2";

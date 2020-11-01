@@ -19,11 +19,12 @@ import com.example.bargiyora.server_api.IOnServerRequestListener;
 import com.example.bargiyora.server_api.ServerRequestHandler;
 
 public class SettingsActivity extends AppCompatActivity implements View.OnClickListener {
-//    private LinearLayout llChangeEmail, llChangePassword;
+    //    private LinearLayout llChangeEmail, llChangePassword;
 //    private TextView tvAddNewUser;
 //    private EditText etOldEmail, etNewEmail, etValidPassword, etOldPassword, etNewPassword;
     private User user;
     private TextView tvEmail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,14 +45,16 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         tvEmail.setText(user.getEmail());
         ImageView ivEditEmail = findViewById(R.id.ivEditID);
         ivEditEmail.setOnClickListener(this);
-        TextView tvAddNewUser=findViewById(R.id.tvAddNewUserID);
-        tvAddNewUser.setOnClickListener(this);
-        if(user.isAdmin())
-            tvAddNewUser.setVisibility(View.VISIBLE);
-        else tvAddNewUser.setVisibility(View.GONE);
+
+        View llAddNewUser = findViewById(R.id.llAddNewUserID);
+        llAddNewUser.setOnClickListener(this);
+        if (user.isAdmin())
+            llAddNewUser.setVisibility(View.VISIBLE);
+        else
+            llAddNewUser.setVisibility(View.GONE);
 
 //        findViewById(R.id.tvChangeEmailID).setOnClickListener(this);
-        findViewById(R.id.tvChangePasswordID).setOnClickListener(this);
+        findViewById(R.id.llChangePasswordID).setOnClickListener(this);
 //        findViewById(R.id.tvChangeEmailSubmitID).setOnClickListener(this);
 //        findViewById(R.id.tvChangePasswordSubmitID).setOnClickListener(this);
 
@@ -77,7 +80,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.tvAddNewUserID: {
+            case R.id.llAddNewUserID: {
                 startRegistrationActivity();
                 break;
             }
@@ -88,7 +91,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 //                    llChangeEmail.setVisibility(View.GONE);
 //                break;
 //            }
-            case R.id.tvChangePasswordID:
+            case R.id.llChangePasswordID:
                 startChangePasswordActivity();
 //                if(llChangePassword.getVisibility() == View.GONE)
 //                    llChangePassword.setVisibility(View.VISIBLE);
@@ -155,17 +158,17 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 //        });
 //    }
 
-    private void startRegistrationActivity(){
+    private void startRegistrationActivity() {
         Intent intent = new Intent(this, RegistrationActivity.class);
         startActivity(intent);
     }
 
-    private void startChangePasswordActivity(){
+    private void startChangePasswordActivity() {
         Intent intent = new Intent(this, ChangePasswordActivity.class);
         startActivity(intent);
     }
 
-    private void startChangeEmailActivity(){
+    private void startChangeEmailActivity() {
         Intent intent = new Intent(this, ChangeEmailActivity.class);
         startActivity(intent);
     }

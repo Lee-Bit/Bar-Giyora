@@ -79,6 +79,6 @@ public class Request {
     }
 
     public String getFullName() {
-        return mFirstName + mLastName;
+        return mFirstName +" "+ mLastName;
     }
 }
