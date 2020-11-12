@@ -17,6 +17,7 @@ import com.example.bargiyora.server_api.BaseResponse;
 import com.example.bargiyora.server_api.DeleteSiteRequest;
 import com.example.bargiyora.server_api.IOnServerRequestListener;
 import com.example.bargiyora.server_api.ServerRequestHandler;
+import com.example.bargiyora.utils.Util;
 
 import java.util.List;
 
@@ -67,6 +68,12 @@ public class SiteListAdapter extends RecyclerView.Adapter<SiteListAdapter.SiteLi
             holder.ivDelete.setVisibility(View.VISIBLE);
         else holder.ivDelete.setVisibility(View.GONE);
         holder.llSiteDetails.setVisibility(View.GONE);
+        holder.ivPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Util.openDialPadWithNumber(v.getContext(), holder.tvSitePhone.getText().toString());
+            }
+        });
     }
 
     @Override
@@ -77,7 +84,7 @@ public class SiteListAdapter extends RecyclerView.Adapter<SiteListAdapter.SiteLi
     class SiteListViewHolder extends RecyclerView.ViewHolder {
         private final TextView tvSiteName, tvSiteContent, tvSitePhone, tvSiteAddress;
         private final LinearLayout llSiteDetails;
-        private final ImageView ivExpand, ivDelete;
+        private final ImageView ivExpand, ivDelete, ivPhone;
 
         public SiteListViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -88,6 +95,7 @@ public class SiteListAdapter extends RecyclerView.Adapter<SiteListAdapter.SiteLi
             llSiteDetails = itemView.findViewById(R.id.llSiteDetailsID);
             ivExpand = itemView.findViewById(R.id.ivExpandID);
             ivDelete = itemView.findViewById(R.id.ivDeleteID);
+            ivPhone = itemView.findViewById(R.id.ivPhoneID);
         }
     }
 

@@ -18,6 +18,7 @@ import com.example.bargiyora.server_api.IOnServerRequestListener;
 import com.example.bargiyora.server_api.ServerRequestHandler;
 import com.example.bargiyora.server_api.UpdateStatusRequest;
 import com.example.bargiyora.utils.AppSettings;
+import com.example.bargiyora.utils.Util;
 
 import java.util.List;
 
@@ -78,6 +79,12 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
                 requestExpand(holder);
             }
         });
+        holder.ivPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Util.openDialPadWithNumber(v.getContext(), holder.tvPublisherPhone.getText().toString());
+            }
+        });
     }
 
     @Override
@@ -89,7 +96,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
         private final TextView tvTitle, tvPublishDate, tvPublishTime, tvFinishDate,
                 tvFinishTime, tvPublisherName, tvPublisherPhone, tvContent;
         private final CheckBox cbStatus;
-        private final ImageView ivExpand;
+        private final ImageView ivExpand, ivPhone;
         private final LinearLayout llRequestDetails, llFinishRequest;
 
         public RequestViewHolder(@NonNull View itemView) {
@@ -104,6 +111,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
             tvPublisherPhone = itemView.findViewById(R.id.tvPublisherPhoneID);
             cbStatus = itemView.findViewById(R.id.cbStatusID);
             ivExpand = itemView.findViewById(R.id.ivExpandID);
+            ivPhone = itemView.findViewById(R.id.ivPhoneID);
             llRequestDetails = itemView.findViewById(R.id.llRequestDetailsID);
             llFinishRequest = itemView.findViewById(R.id.llFinishRequestID);
         }

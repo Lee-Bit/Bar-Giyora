@@ -16,6 +16,7 @@ import com.example.bargiyora.server_api.BaseResponse;
 import com.example.bargiyora.server_api.DeleteBusinessRequest;
 import com.example.bargiyora.server_api.IOnServerRequestListener;
 import com.example.bargiyora.server_api.ServerRequestHandler;
+import com.example.bargiyora.utils.Util;
 
 import java.util.List;
 
@@ -66,6 +67,12 @@ public class BusinessesListAdapter extends RecyclerView.Adapter<BusinessesListAd
             holder.ivDelete.setVisibility(View.VISIBLE);
         else holder.ivDelete.setVisibility(View.GONE);
         holder.llBusinessDetails.setVisibility(View.GONE);
+        holder.ivPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Util.openDialPadWithNumber(v.getContext(), holder.tvBusinessPhone.getText().toString());
+            }
+        });
     }
 
     @Override
@@ -76,7 +83,7 @@ public class BusinessesListAdapter extends RecyclerView.Adapter<BusinessesListAd
     class BusinessesListViewHolder extends RecyclerView.ViewHolder {
         private final TextView tvBusinessName, tvBusinessContent, tvBusinessPhone, tvBusinessAddress;
         private final LinearLayout llBusinessDetails;
-        private final ImageView ivExpand, ivDelete;
+        private final ImageView ivExpand, ivDelete, ivPhone;
 
         public BusinessesListViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -87,6 +94,7 @@ public class BusinessesListAdapter extends RecyclerView.Adapter<BusinessesListAd
             llBusinessDetails = itemView.findViewById(R.id.llBusinessDetailsID);
             ivExpand = itemView.findViewById(R.id.ivExpandID);
             ivDelete = itemView.findViewById(R.id.ivDeleteID);
+            ivPhone = itemView.findViewById(R.id.ivPhoneID);
         }
     }
 

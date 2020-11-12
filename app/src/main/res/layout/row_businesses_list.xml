@@ -51,16 +51,23 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/phone" />
 
             <TextView
                 android:id="@+id/tvBusinessPhoneID"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2" />
+                android:layout_marginStart="10dp" />
+
+            <ImageView
+                android:id="@+id/ivPhoneID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/ic_phone" />
         </LinearLayout>
 
         <LinearLayout

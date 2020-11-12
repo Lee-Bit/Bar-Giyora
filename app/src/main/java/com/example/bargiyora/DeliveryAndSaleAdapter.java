@@ -16,6 +16,7 @@ import com.example.bargiyora.server_api.BaseResponse;
 import com.example.bargiyora.server_api.DeleteDeliveryAndSaleRequest;
 import com.example.bargiyora.server_api.IOnServerRequestListener;
 import com.example.bargiyora.server_api.ServerRequestHandler;
+import com.example.bargiyora.utils.Util;
 
 import java.util.List;
 
@@ -73,6 +74,12 @@ public class DeliveryAndSaleAdapter extends RecyclerView.Adapter<DeliveryAndSale
                 itemDelete(position, userId);
             }
         });
+        holder.ivPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Util.openDialPadWithNumber(v.getContext(), holder.tvPublisherPhone.getText().toString());
+            }
+        });
     }
 
     @Override
@@ -84,8 +91,8 @@ public class DeliveryAndSaleAdapter extends RecyclerView.Adapter<DeliveryAndSale
 
         private final TextView tvItemType, tvItemDate, tvItemName, tvItemPrice, tvPublisherName, tvPublisherPhone, tvItemContent;
         private final LinearLayout llItemDetails;
-        private final ImageView ivExpand, ivDelete;
-//
+        private final ImageView ivExpand, ivDelete, ivPhone;
+
         public DeliveryAndSaleViewHolder(@NonNull View itemView) {
             super(itemView);
             tvItemType = itemView.findViewById(R.id.tvItemTypeID);
@@ -98,6 +105,7 @@ public class DeliveryAndSaleAdapter extends RecyclerView.Adapter<DeliveryAndSale
             llItemDetails=itemView.findViewById(R.id.llItemDetailsID);
             ivExpand=itemView.findViewById(R.id.ivExpandID);
             ivDelete=itemView.findViewById(R.id.ivDeleteID);
+            ivPhone=itemView.findViewById(R.id.ivPhoneID);
         }
     }
 
