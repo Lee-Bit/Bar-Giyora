@@ -27,10 +27,11 @@
     <string name="apartment">מספר בית</string>
     <string name="email">דואר אלקטרוני</string>
 
-    <string name="newRequest">הקמת פניה חדשה</string>
-    <string name="requestTitle">נושא הפניה</string>
-    <string name="requestContent">תוכן הפניה</string>
-    <string name="requestMessage">הכנס כאן את תוכן הפניה שלך</string>
+    <string name="add_request_title">הוספת פניה חדשה</string>
+    <string name="request_title">סמן את נושא הפניה:</string>
+    <string name="request_content">תוכן הפניה:</string>
+
+    <string name="request_content_hint">הכנס כאן את תוכן הפניה שלך</string>
     <string-array name="typeOfRequest">
         <item>בחר נושא</item>
         <item>בטחון</item>

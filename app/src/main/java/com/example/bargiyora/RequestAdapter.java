@@ -35,11 +35,19 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
         return new RequestViewHolder(view);
     }
 
+    public void addRequest(Request request) {
+        if (request != null) {
+            int index = requestList.size();
+            requestList.add(request);
+            notifyItemInserted(index);
+        }
+    }
+
     @Override
     public void onBindViewHolder(@NonNull RequestAdapter.RequestViewHolder holder, int position) {
         Request item = requestList.get(position);
         boolean isAdmin = DataManager.getInstance().getUser().isAdmin();
-        boolean status= item.getStatus();
+        boolean status = item.getStatus();
         String categoryId = item.getCategory();
 
         holder.tvPublishDate.setText(item.getPublishDate());
@@ -50,12 +58,11 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
         holder.tvTitle.setText(getTitle(categoryId));
         holder.llRequestDetails.setVisibility(View.GONE);
 
-        if (status){
+        if (status) {
             holder.tvFinishDate.setText(item.getFinishDate());
             holder.tvFinishTime.setText(item.getFinishTime());
             holder.llFinishRequest.setVisibility(View.VISIBLE);
-        }
-        else holder.llFinishRequest.setVisibility(View.GONE);
+        } else holder.llFinishRequest.setVisibility(View.GONE);
 
         holder.cbStatus.setChecked(status);
         holder.cbStatus.setClickable(isAdmin);
@@ -102,10 +109,10 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
         }
     }
 
-    private int getTitle(String categoryId){
-        switch (categoryId){
+    private int getTitle(String categoryId) {
+        switch (categoryId) {
             case AppSettings
-                   .REQUEST_CATEGORY_SECURITY:
+                    .REQUEST_CATEGORY_SECURITY:
                 return R.string.security;
             case AppSettings.REQUEST_CATEGORY_MAINTENANCE:
                 return R.string.maintenance;
@@ -115,8 +122,8 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
         return R.string.other;
     }
 
-    private void requestExpand(RequestViewHolder holder){
-        if (holder.llRequestDetails.getVisibility()==View.GONE){
+    private void requestExpand(RequestViewHolder holder) {
+        if (holder.llRequestDetails.getVisibility() == View.GONE) {
             holder.llRequestDetails.setVisibility(View.VISIBLE);
             holder.ivExpand.setImageResource(R.drawable.ic_expand_less);
             return;
@@ -125,21 +132,21 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
         holder.ivExpand.setImageResource(R.drawable.ic_expand_more);
     }
 
-    private void updateStatus(int position){
+    private void updateStatus(int position) {
         String userId = DataManager.getInstance().getUser().getPhone();
-        boolean newStatus= !(requestList.get(position).getStatus());
+        boolean newStatus = !(requestList.get(position).getStatus());
         UpdateStatusRequest updateStatusRequest = new UpdateStatusRequest(requestList.get(position).getId(), userId, newStatus);
         ServerRequestHandler.updateStatus(updateStatusRequest, new IOnServerRequestListener() {
             @Override
             public <T> void onSuccess(BaseResponse<T> baseResponse) {
-                if (baseResponse!= null){
-                    Request request = (Request)baseResponse.getResults();
-                    if (request != null){
+                if (baseResponse != null) {
+                    Request request = (Request) baseResponse.getResults();
+                    if (request != null) {
                         requestList.remove(position);
-                        requestList.add(position,request);
+                        requestList.add(position, request);
                         notifyItemChanged(position);
                     }
-                }else return;// TODO: 10/27/2020
+                } else return;// TODO: 10/27/2020
             }
 
             @Override

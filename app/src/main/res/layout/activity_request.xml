@@ -26,7 +26,7 @@
             android:paddingTop="5dp"
             android:paddingEnd="30dp"
             android:paddingBottom="5dp"
-            android:text="@string/newRequest"
+            android:text="@string/add_request_title"
             android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold" />

@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/requestTitle"
+                android:text="@string/request_title"
                 android:textSize="20dp"/>
         </LinearLayout>
 
@@ -38,17 +38,11 @@
             android:id="@+id/txvRequestContentID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/requestContent"
+            android:text="@string/request_content"
             android:layout_weight="1"
             android:textSize="20dp"/>
 
-        <EditText
-            android:id="@+id/edtRequestContentID"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:hint="@string/requestMessage"
-            android:textSize="15dp"/>
+
 
     </LinearLayout>
 
